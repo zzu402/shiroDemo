@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.htkfood.dao.TestUserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.htkfood.entity.TestUser">
+		<id column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="password" property="password" />
+		<result column="roleId" property="roleId" />
+	</resultMap>
+
+
+	<resultMap id="UserAndRoleMap" type="com.htkfood.entity.TestUser">
+		<id column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="password" property="password" />
+		<result column="roleId" property="roleId" />
+		 <association property="role" javaType="com.htkfood.entity.TestRole">
+            <id column="roleId" property="id"/>
+            <result column="name" property="name"/>
+            <result column="display_name" property="displayName"/>
+             <result column="privileges" property="privileges"/>
+        </association>
+        
+	</resultMap>
+	
+	<select id="getUserAndRole" resultMap="UserAndRoleMap"  parameterType="com.htkfood.dao.Criteria">
+		select *  from test_user u
+		left join  test_role r on u.roleId=r.id
+		where u.user_name=#{condition.userName}
+	</select>
+
+
+
+
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id, user_name AS userName, password, roleId
+	</sql>
+
+
+
+
+
+
+
+
+</mapper>

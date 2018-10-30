@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dream</title>
+    <!-- Bootstrap Styles-->
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <!-- FontAwesome Styles-->
+    <link href="../css/font-awesome.css" rel="stylesheet"/>
+    <link href="../css/custom-styles.css" rel="stylesheet"/>
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+<!--顶部-->
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">测试</a>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="/user_profile"><i class="fa fa-user fa-fw"></i>我的资料</a>
+                    </li>
+
+                    <li><a onclick="logout()"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+    </nav>
+
+
+    <!--左侧导航栏-->
+
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse" id="app" v-cloak>
+            <ul class="nav" id="main-menu">
+
+                <li>
+                    <a  href="index.html"><i class="fa fa-dashboard"></i> 首页内容</a>
+                </li>
+                <li>
+                    <a   href="user_add.html"><i class="fa fa-desktop"></i> 用户添加权限</a>
+                </li>
+                <li  >
+                    <a class="active-menu" href="user_delete.html">
+                            <i class="fa fa-tasks fa-fw"></i> 用户删除权限
+                    </a>
+                </li>
+                <li >
+                    <a   href="user_list.html">
+                        <i class="fa fa-tasks fa-fw"></i> 用户获取列表权限
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!--中间内容主体-->
+    <div id="page-wrapper">
+        这是user_delete
+    </div>
+
+ 
+
+</div>
+
+</body>
+
+
+</html>
